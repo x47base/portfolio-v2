@@ -36,10 +36,12 @@ const Contact = () => {
               <MdEmail className="text-xl text-accent" />
               <a href="mailto:samuelspink.ch@gmail.com" className="text-white/80">samuelspink.ch@gmail.com</a>
             </div>
-            <div className="hidden flex items-center gap-4">
+            {/*
+            <div className="flex items-center gap-4">
               <MdPhone className="text-xl text-accent" />
               <a href="tel:+41000000000" className="text-white/80">+41 00 000 00 00</a>
             </div>
+            */}
             <div className="socials">
               <Socials
                 containerStyle="flex gap-6"

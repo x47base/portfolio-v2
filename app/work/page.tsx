@@ -17,7 +17,7 @@ export default function Projects() {
       description: "Collaboratively developed a responsive website centered on Roman economy themes. The project featured a clean, modern design with a responsive header, ensuring seamless user experience across all devices.",
       techStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
       images: ["/assets/project-prwr-probe-ipa-1.png"],
-      link: "https://example.com/",
+      link: "https://prwr.spink.dev/",
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export default function Projects() {
       description: "Developed a music page with features allowing immediate sound playback from a list, track liking, volume control, and real-time track position display. Utilized modern frameworks to enhance functionality and streamline development.",
       techStack: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bash"],
       images: ["/assets/project-spoofify-1.png"],
-      link: "https://example.com",
+      link: "https://spoofify.spink.dev/",
     },
     {
       id: 3,

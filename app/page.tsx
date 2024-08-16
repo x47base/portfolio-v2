@@ -34,9 +34,8 @@ export default function Home() {
   return (
     <section className="h-full">
       <div className="container mx-auto h-full xl:flex xl:justify-center xl:items-center">
-        <div className="flex flex-col xl:flex-row items-center justify-between
-        xl:pt-8 xl: pb-24 xl:w-4/5 gap-8">
-          <div className="text-center xl:text-left">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl: pb-24 xl:w-4/5 gap-8">
+          <div className="flex-1 text-center xl:text-left">
             <span className="text-xl">Application Developer</span>
             <div>
               <h1 className="h1 mb-6">
@@ -56,7 +55,7 @@ export default function Home() {
               <Link href="/work">
                 <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
                   <span>View My Work</span>
-                  <MdWork className="text-xl"/>
+                  <MdWork className="text-xl" />
                 </Button>
               </Link>
               <div className="socials">
@@ -68,13 +67,12 @@ export default function Home() {
             </div>
 
           </div>
-          <div className="w-56 h-56 xl:w-72 xl:h-72 mix-blend-lighten">
+          <div className="flex-shrink-0">
             <Image
               src="/assets/photo.jpg"
               alt="Samuel Spink"
-              layout="responsive"
-              width={498}
-              height={498}
+              width={300}
+              height={300}
               className="object-cover rounded-lg"
             />
           </div>

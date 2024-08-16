@@ -1,8 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  basePath: "", // <=== here it is
-  output: "export",
-  reactStrictMode: true,
-};
+const nextConfig = {};
 
 export default nextConfig;

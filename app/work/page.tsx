@@ -90,7 +90,7 @@ export default function Projects() {
             Explore a selection of my projects that highlight my expertise in application development. Click on a project to learn more.
           </p>
         </div>
-        <div className="flex flex-wrap justify-center items-center xl:justify-start xl:items-start gap-4">
+        <div className="flex flex-wrap justify-center items-center gap-4">
           {projects.map((project) => {
             const { visible, hidden } = visibleTechStack(project.techStack, 3);
             return (

@@ -4,7 +4,7 @@ import React from "react";
 
 const socials = [
     { icon: <FaGithub />, path: "https://github.com/x47base" },
-    { icon: <FaLinkedin />, path: "https://www.linkedin.com/" },
+    { icon: <FaLinkedin />, path: "https://www.linkedin.com/in/samuel-h-spink" },
     { icon: <FaYoutube />, path: "https://www.youtube.com/channel/UCP7Ite4Y6WpV-TtXRaoQH1w" },
 ];
 

@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { MdWork } from "react-icons/md";
-
 import { Button } from "@/components/ui/button";
 import Socials from "@/components/Socials";
 
@@ -14,27 +13,34 @@ export default function Home() {
   const [hideCursorTwo, setHideCursorTwo] = useState(false);
 
   useEffect(() => {
-    setTimeout(() => {
-      setShowFirstLine(true);
-    }, 0);
+    // Set the durations based on text length or other criteria
+    const firstLineDuration = 1000;
+    const secondLineDuration = 1000;
 
-    setTimeout(() => {
+    setShowFirstLine(true);
+    const timer1 = setTimeout(() => {
       setHideCursorOne(true);
-    }, 1100);
+    }, firstLineDuration - 150);
 
-    setTimeout(() => {
+    const timer2 = setTimeout(() => {
       setShowSecondLine(true);
-    }, 1095);
+    }, firstLineDuration);
 
-    setTimeout(() => {
+    const timer3 = setTimeout(() => {
       setHideCursorTwo(true);
-    }, 2190);
+    }, firstLineDuration + secondLineDuration);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
   }, []);
 
   return (
     <section className="h-full">
       <div className="container mx-auto h-full xl:flex xl:justify-center xl:items-center">
-        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl: pb-24 xl:w-4/5 gap-8">
+        <div className="flex flex-col xl:flex-row items-center justify-between xl:pt-8 pb-8 xl:w-4/5 gap-8">
           <div className="flex-1 text-center xl:text-left">
             <span className="text-xl">Application Developer</span>
             <div>
@@ -65,7 +71,6 @@ export default function Home() {
                 />
               </div>
             </div>
-
           </div>
           <div className="flex-shrink-0">
             <Image

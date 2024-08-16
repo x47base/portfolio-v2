@@ -98,10 +98,10 @@
   display: inline-block;
   overflow: hidden;
   white-space: nowrap;
+  border-right: 0.15em solid rgba(255, 255, 255, 0.75);
 }
 
 .typewriter-line1 {
-  border-right: 0.15em solid rgba(255, 255, 255, 0.75);
   animation: 
     typewriter 1s steps(20, end) 0.5s 1 normal both,
     blinkTextCursor 500ms steps(40, end) 1.5s 1 forwards;
@@ -116,8 +116,7 @@
 }
 
 .typewriter-line2 {
-  border-right: 0.15em solid rgba(255, 255, 255, 0.75);
   animation: 
     typewriter 1s steps(20, end) 0.5s 1 normal both,
-    blinkTextCursor 500ms steps(40, end) 1.5s 1 forwards;;
+    blinkTextCursor 500ms steps(40, end) 1.5s 1 forwards;
 }

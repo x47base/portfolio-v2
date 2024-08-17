@@ -29,7 +29,7 @@ const Contact = () => {
             </span>
           </h2>
           <p className="max-w-[500px] mb-9 text-white/80">
-            I{"'"}m always open to discuss your project or ideas. Feel free to reach out to me via email or phone.
+            I{"'"}m always open to discuss your project or ideas. Feel free to reach out to me via email.
           </p>
           <div className="flex justify-center items-center xl:items-start xl:justify-start flex-col gap-6">
             <div className="flex items-center gap-4">

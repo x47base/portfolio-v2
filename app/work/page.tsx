@@ -29,19 +29,19 @@ export default function Projects() {
     },
     {
       id: 3,
-      title: "Project 3",
-      description: "A brief description of Project 3.",
-      techStack: ["Javascript", "HTML", "CSS", "Tailwind CSS"],
-      images: ["/assets/placeholder.jpg", "/assets/placeholder.jpg"],
-      link: "https://example.com/project-3",
+      title: "LUAshell",
+      description: "Developed as a proof-of-concept, LUAshell is a script that generates shell command execution scripts disguised as Lua code, leveraging Lua 5.4. This project allows users to embed and execute shell commands within Lua scripts, providing a streamlined approach for automating tasks across different environments. LUAshell facilitates secure code generation with built-in functionality to mitigate potential security risks. The tool supports various command-based attacks, including HTA, Powershell, and MSbuild, making it a versatile resource for both automation and security research.",
+      techStack: ["Lua"],
+      images: ["/assets/project-luashell-1.png"],
+      link: "https://github.com/x47base/luashell",
     },
     {
       id: 4,
-      title: "Project 4",
-      description: "A brief description of Project 4.",
-      techStack: ["Node.js", "Express"],
+      title: "British Army - Roblox Military Group (Version 6)",
+      description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
+      techStack: ["Lua", "Roblox API"],
       images: ["/assets/placeholder.jpg"],
-      link: "",
+      link: "https://www.roblox.com/games/7327497219/British-Army",
     },
   ];
 

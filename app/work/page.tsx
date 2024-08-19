@@ -15,6 +15,15 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
+      title: "Digital Accessibility Hackathon 2024 - Text-to-Speech Endpoint",
+      description: "Developed a text-to-speech API endpoint during the Digital Accessibility Hackathon 2024 in Zürich. This FastAPI-based service uses pyttsx3 to convert text into audio, enhancing digital accessibility by providing speech outputs for text-based content. The solution supports real-time audio generation and streaming, aimed at improving accessibility for various applications.",
+      techStack: ["Python", "FastAPI", "pyttsx3"],
+      images: ["/assets/project-accessiblity-hack-24-1.png"], // No image available
+      link: "https://github.com/x47base/accessiblity-hack-24",
+      video: null,
+    },
+    {
+      id: 2,
       title: "Projekte Wirtschaft - Probe IPA",
       description: "Collaboratively developed a responsive website centered on Roman economy themes. The project featured a clean, modern design with a responsive header, ensuring seamless user experience across all devices.",
       techStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
@@ -23,7 +32,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 2,
+      id: 3,
       title: "Spoofify",
       description: "Developed a music page with features allowing immediate sound playback from a list, track liking, volume control, and real-time track position display. Utilized modern frameworks to enhance functionality and streamline development.",
       techStack: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bash"],
@@ -32,7 +41,7 @@ export default function Projects() {
       video: "CfCZPNMv8r0", // Only the video ID part of the URL
     },
     {
-      id: 3,
+      id: 4,
       title: "Authentication Backend System",
       description: "Built a secure authentication backend with session management and JWT-based authorization. The project integrates MongoDB for data storage and uses Swagger for API documentation, providing a reliable and scalable solution for user authentication in web applications.",
       techStack: ["JavaScript", "Express", "MongoDB", "Swagger-UI"],
@@ -134,7 +143,7 @@ export default function Projects() {
                 />
                 <div className="p-4 h-40 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold">{project.title}</h3>
+                    <h3 className="text-lg font-semibold">{truncateText(project.title, 32)}</h3>
                     <p className="text-sm text-gray-400 mt-1">
                       {truncateText(project.description, 60)}
                     </p>

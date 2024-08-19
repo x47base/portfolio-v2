@@ -4,6 +4,7 @@ import { IoChevronBack, IoChevronForward, IoLink } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "@/components/Modal";
+import YouTubeEmbed from "@/components/YouTubeEmbed";
 import { Tooltip } from 'react-tooltip';
 
 export default function Projects() {
@@ -18,6 +19,7 @@ export default function Projects() {
       techStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
       images: ["/assets/project-prwr-probe-ipa-1.png"],
       link: "https://prwr.spink.dev/",
+      video: null,
     },
     {
       id: 2,
@@ -26,14 +28,16 @@ export default function Projects() {
       techStack: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bash"],
       images: ["/assets/project-spoofify-1.png"],
       link: "https://spoofify.spink.dev/",
+      video: "CfCZPNMv8r0", // Only the video ID part of the URL
     },
     {
       id: 3,
       title: "LUAshell",
-      description: "Developed as a proof-of-concept, LUAshell is a script that generates shell command execution scripts disguised as Lua code, leveraging Lua 5.4. This project allows users to embed and execute shell commands within Lua scripts, providing a streamlined approach for automating tasks across different environments. LUAshell facilitates secure code generation with built-in functionality to mitigate potential security risks. The tool supports various command-based attacks, including HTA, Powershell, and MSbuild, making it a versatile resource for both automation and security research.",
+      description: "LUAshell is a proof-of-concept script that embeds and executes shell commands within Lua code, leveraging Lua 5.4. It automates tasks across environments and includes security measures to mitigate risks. The tool supports various command-based attacks like HTA, PowerShell, and MSBuild, making it valuable for automation and security research.",
       techStack: ["Lua"],
       images: ["/assets/project-luashell-1.png"],
       link: "https://github.com/x47base/luashell",
+      video: null,
     },
     {
       id: 4,
@@ -42,6 +46,7 @@ export default function Projects() {
       techStack: ["Lua", "Roblox API"],
       images: ["/assets/placeholder.jpg"],
       link: "https://www.roblox.com/games/7327497219/British-Army",
+      video: "QNKJ8kuQ-r8", // Only the video ID part of the URL
     },
   ];
 
@@ -56,6 +61,7 @@ export default function Projects() {
 
   const handleNavigate = (direction: "prev" | "next") => {
     if (!selectedProject) return;
+
     const imagesCount = selectedProject.images.length;
     if (direction === "prev") {
       setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : imagesCount - 1));
@@ -146,30 +152,38 @@ export default function Projects() {
         <Modal onClose={handleCloseModal}>
           <div className="relative w-full h-full flex flex-col xl:flex-row p-4 xl:max-w-6xl xl:mx-auto">
             <div className="relative flex-1 flex items-center justify-center overflow-hidden mb-4 xl:mb-0">
-              {selectedProject.images.length > 1 && (
-                <button
-                  onClick={() => handleNavigate("prev")}
-                  className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2 shadow-lg hover:bg-gray-700 z-40"
-                >
-                  <IoChevronBack className="text-2xl" />
-                </button>
-              )}
-              <div className="relative w-full h-full flex justify-center">
-                <Image
-                  src={selectedProject.images[currentImageIndex]}
-                  alt={`${selectedProject.title} Image ${currentImageIndex + 1}`}
-                  width={800}
-                  height={600}
-                  className="object-contain max-h-full max-w-full rounded-lg"
-                />
-              </div>
-              {selectedProject.images.length > 1 && (
-                <button
-                  onClick={() => handleNavigate("next")}
-                  className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2 shadow-lg hover:bg-gray-700 z-40"
-                >
-                  <IoChevronForward className="text-2xl" />
-                </button>
+              {selectedProject.video ? (
+                <div className="relative w-full h-0 pb-[56.25%]">
+                  <YouTubeEmbed embedId={selectedProject.video} />
+                </div>
+              ) : (
+                <>
+                  {selectedProject.images.length > 1 && (
+                    <>
+                      <button
+                        onClick={() => handleNavigate("prev")}
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2 shadow-lg hover:bg-gray-700 z-40"
+                      >
+                        <IoChevronBack className="text-2xl" />
+                      </button>
+                      <button
+                        onClick={() => handleNavigate("next")}
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2 shadow-lg hover:bg-gray-700 z-40"
+                      >
+                        <IoChevronForward className="text-2xl" />
+                      </button>
+                    </>
+                  )}
+                  <div className="relative w-full h-full flex justify-center">
+                    <Image
+                      src={selectedProject.images[currentImageIndex]}
+                      alt={`${selectedProject.title} Image ${currentImageIndex + 1}`}
+                      width={800}
+                      height={600}
+                      className="object-contain max-h-full max-w-full rounded-lg"
+                    />
+                  </div>
+                </>
               )}
             </div>
 

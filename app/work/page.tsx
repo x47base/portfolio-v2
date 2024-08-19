@@ -15,15 +15,6 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Roblox Military Game (Version 6)",
-      description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
-      techStack: ["Lua", "Roblox API"],
-      images: [],
-      link: "https://www.roblox.com/games/7327497219/British-Army",
-      video: "QNKJ8kuQ-r8", // Only the video ID part of the URL
-    },
-    {
-      id: 2,
       title: "Authentication Backend System",
       description: "Built a secure authentication backend with session management and JWT-based authorization. The project integrates MongoDB for data storage and uses Swagger for API documentation, providing a reliable and scalable solution for user authentication in web applications.",
       techStack: ["JavaScript", "Express", "MongoDB", "Swagger-UI"],
@@ -32,7 +23,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 3,
+      id: 2,
       title: "Digital Accessibility Hackathon 2024 - Text-to-Speech Endpoint",
       description: "Developed a text-to-speech API endpoint during the Digital Accessibility Hackathon 2024 in Zürich. This FastAPI-based service uses pyttsx3 to convert text into audio, enhancing digital accessibility by providing speech outputs for text-based content. The solution supports real-time audio generation and streaming, aimed at improving accessibility for various applications.",
       techStack: ["Python", "FastAPI", "pyttsx3"],
@@ -41,7 +32,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 4,
+      id: 3,
       title: "Projekte Wirtschaft - Probe IPA",
       description: "Collaboratively developed a responsive website centered on Roman economy themes. The project featured a clean, modern design with a responsive header, ensuring seamless user experience across all devices.",
       techStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
@@ -50,7 +41,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 5,
+      id: 4,
       title: "Spoofify",
       description: "Developed a music page with features allowing immediate sound playback from a list, track liking, volume control, and real-time track position display. Utilized modern frameworks to enhance functionality and streamline development.",
       techStack: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bash"],
@@ -59,7 +50,7 @@ export default function Projects() {
       video: "CfCZPNMv8r0", // Only the video ID part of the URL
     },
     {
-      id: 6,
+      id: 5,
       title: "LUAshell",
       description: "LUAshell is a proof-of-concept script that embeds and executes shell commands within Lua code, leveraging Lua 5.4. It automates tasks across environments and includes security measures to mitigate risks. The tool supports various command-based attacks like HTA, PowerShell, and MSBuild, making it valuable for automation and security research.",
       techStack: ["Lua"],
@@ -69,12 +60,39 @@ export default function Projects() {
     },
     {
       id: 7,
+      title: "Zypher Executor V1.10 - UI Design",
+      description: "Designed and implemented the user interface for Zypher Executor V1.10, a commissioned project. The UI was developed using Xamarin in the .NET framework on Visual Studio 2019 and integrated with a backend written in C#. The project also involved connecting the application with a custom DLL provided by the client to ensure seamless functionality.",
+      techStack: [".NET", "C#", "XAMARIN"],
+      images: ["/assets/project-zypher-v1-10-1.png", "/assets/project-zypher-v1-10-2.png"],
+      link: "",
+      video: null,
+    },
+    {
+      id: 8,
+      title: "Crysisroblox - UI Design",
+      description: "Created the user interface for Crysisroblox, a custom project commissioned by a client. The UI was built using Xamarin within the .NET framework on Visual Studio 2019 and integrated with a C# backend. The application was connected to a customer-provided DLL to deliver the required features.",
+      techStack: [".NET", "C#", "XAMARIN"],
+      images: ["/assets/project-crysisroblox-1.png"],
+      link: "",
+      video: null,
+    },
+    {
+      id: 9,
       title: "Discord Bot Template 2022",
       description: "Created a versatile template for Discord bots utilizing slash commands. The template includes essential functions, event handling, and pre-defined options to streamline the development of new Discord bots. This project serves as a foundational tool for quickly setting up and deploying bots with standard features, making it a valuable resource for developers working on Discord integrations.",
       techStack: ["Python", "Discord.py"],
       images: ["/assets/project-discord-bot-template-1.png"],
       link: "https://github.com/x47base/Discord-Template-Slash-Commands-Bot",
       video: null,
+    },
+    {
+      id: 10,
+      title: "Roblox Military Game (Version 6)",
+      description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
+      techStack: ["Lua", "Roblox API"],
+      images: [],
+      link: "https://www.roblox.com/games/7327497219/British-Army",
+      video: "QNKJ8kuQ-r8", // Only the video ID part of the URL
     },
   ];
 

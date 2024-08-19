@@ -15,7 +15,30 @@ export default function Experience() {
       company: "Kantonsschule Hottingen",
       companyUrl: "https://www.ksh.ch/",
       description: "As a student at Kantonsschule Hottingen in Zurich, I am actively pursuing a path in application development. Every Wednesday, I attend specialized IT modules at Bildungszentrum Zürichsee, where I gain in-depth knowledge and practical experience in various technologies. These modules provide both theoretical and hands-on learning opportunities, enhancing my skills in programming and software development.",
-      technologies: ["Python", "JavaScript", "CSS", "Tailwind CSS", "Next.js", "React", "Express", "Node.js", "VS Code", "Bash"],
+      technologies: [
+        // Programming Languages
+        "JavaScript",
+        "Python",
+        
+        // Web Development Frameworks
+        "React",
+        "Next.js",
+        "Express",
+        
+        // Styling
+        "CSS",
+        "Tailwind CSS",
+        
+        // Database
+        "MongoDB",
+        
+        // Cloud Services
+        "Amazon Web Services (AWS)",
+        
+        // Development Tools
+        "VS Code",
+        "Bash"
+      ]      
     },
   ];
 

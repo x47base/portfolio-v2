@@ -1,7 +1,6 @@
-
 "use client";
 import { useState } from "react";
-import { IoChevronBack, IoChevronForward, IoLink, IoVideocam, IoImage } from "react-icons/io5";
+import { IoChevronBack, IoChevronForward, IoLink, IoVideocam, IoImage, IoCloseCircle } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "@/components/Modal";
@@ -11,7 +10,7 @@ import { Tooltip } from 'react-tooltip';
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [viewMode, setViewMode] = useState<'images' | 'video'>('images'); // New state to manage view mode
+  const [viewMode, setViewMode] = useState<'images' | 'video'>('images');
 
   const projects = [
     {
@@ -34,6 +33,24 @@ export default function Projects() {
     },
     {
       id: 3,
+      title: "Authentication Backend System",
+      description: "Built a secure authentication backend with session management and JWT-based authorization. The project integrates MongoDB for data storage and uses Swagger for API documentation, providing a reliable and scalable solution for user authentication in web applications.",
+      techStack: ["JavaScript", "Express", "MongoDB", "Swagger-UI"],
+      images: ["/assets/project-authentication-backend-1.png"],
+      link: "https://github.com/x47base/authentication-backend",
+      video: null,
+    },
+    {
+      id: 5,
+      title: "Discord Bot Template 2022",
+      description: "Created a versatile template for Discord bots utilizing slash commands. The template includes essential functions, event handling, and pre-defined options to streamline the development of new Discord bots. This project serves as a foundational tool for quickly setting up and deploying bots with standard features, making it a valuable resource for developers working on Discord integrations.",
+      techStack: ["Python", "Discord.py"],
+      images: ["/assets/project-discord-bot-template-1.png"],
+      link: "https://github.com/x47base/Discord-Template-Slash-Commands-Bot",
+      video: null,
+    },
+    {
+      id: 6,
       title: "LUAshell",
       description: "LUAshell is a proof-of-concept script that embeds and executes shell commands within Lua code, leveraging Lua 5.4. It automates tasks across environments and includes security measures to mitigate risks. The tool supports various command-based attacks like HTA, PowerShell, and MSBuild, making it valuable for automation and security research.",
       techStack: ["Lua"],
@@ -42,8 +59,8 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 4,
-      title: "British Army - Roblox Military Group (Version 6)",
+      id: 7,
+      title: "Roblox Military Game (Version 6)",
       description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
       techStack: ["Lua", "Roblox API"],
       images: ["/assets/project-roblox-hba-1.png"],
@@ -216,19 +233,28 @@ export default function Projects() {
                 </div>
               )}
             </div>
+
             {/* Toggle Switch */}
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center  rounded-lg">
               <button
                 onClick={() => setViewMode('images')}
-                className={`px-4 py-2 rounded-l-lg transition-colors ${viewMode === 'images' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} transition-colors duration-300`}
+                disabled={!selectedProject.images.length} // Disable if no images
+                className={`relative px-4 py-2 rounded-l-lg transition-colors ${viewMode === 'images' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.images.length ? 'opacity-50 cursor-not-allowed' : ''} transition-colors duration-300`}
               >
                 <IoImage className="text-xl" />
+                {!selectedProject.images.length && (
+                  <IoCloseCircle className="absolute top-1 right-1 text-red-500" />
+                )}
               </button>
               <button
                 onClick={() => setViewMode('video')}
-                className={`px-4 py-2 rounded-r-lg transition-colors ${viewMode === 'video' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} transition-colors duration-300`}
+                disabled={!selectedProject.video} // Disable if no video
+                className={`relative px-4 py-2 rounded-r-lg transition-colors ${viewMode === 'video' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.video ? 'opacity-50 cursor-not-allowed' : ''} transition-colors duration-300`}
               >
                 <IoVideocam className="text-xl" />
+                {!selectedProject.video && (
+                  <IoCloseCircle className="absolute top-1 right-1 text-red-500" />
+                )}
               </button>
             </div>
           </div>

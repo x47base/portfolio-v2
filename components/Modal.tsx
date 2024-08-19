@@ -9,6 +9,16 @@ interface ModalProps {
 
 const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
   useEffect(() => {
+    // Prevent background scrolling
+    document.body.style.overflow = "hidden";
+
+    // Clean up and restore background scrolling when modal is closed
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
+
+  useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         onClose();
@@ -27,7 +37,7 @@ const Modal: React.FC<ModalProps> = ({ onClose, children }) => {
       onClick={onClose}
     >
       <div
-        className="relative bg-gray-800 text-white w-full h-full xl:max-w-5xl xl:h-auto xl:rounded-lg xl:overflow-hidden"
+        className="relative bg-gray-800 text-white w-full h-full xl:max-w-5xl xl:h-auto xl:rounded-lg xl:overflow-hidden overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button

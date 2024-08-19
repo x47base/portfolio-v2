@@ -1,6 +1,7 @@
+
 "use client";
 import { useState } from "react";
-import { IoChevronBack, IoChevronForward, IoLink } from "react-icons/io5";
+import { IoChevronBack, IoChevronForward, IoLink, IoVideocam, IoImage } from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "@/components/Modal";
@@ -10,6 +11,7 @@ import { Tooltip } from 'react-tooltip';
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [viewMode, setViewMode] = useState<'images' | 'video'>('images'); // New state to manage view mode
 
   const projects = [
     {
@@ -44,7 +46,7 @@ export default function Projects() {
       title: "British Army - Roblox Military Group (Version 6)",
       description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
       techStack: ["Lua", "Roblox API"],
-      images: ["/assets/placeholder.jpg"],
+      images: ["/assets/project-roblox-hba-1.png"],
       link: "https://www.roblox.com/games/7327497219/British-Army",
       video: "QNKJ8kuQ-r8", // Only the video ID part of the URL
     },
@@ -53,6 +55,7 @@ export default function Projects() {
   const handleProjectClick = (project: any) => {
     setSelectedProject(project);
     setCurrentImageIndex(0);
+    setViewMode('images');
   };
 
   const handleCloseModal = () => {
@@ -116,7 +119,7 @@ export default function Projects() {
                   <div>
                     <h3 className="text-lg font-semibold">{project.title}</h3>
                     <p className="text-sm text-gray-400 mt-1">
-                      {truncateText(project.description, 60)} {/* Adjust character limit as needed */}
+                      {truncateText(project.description, 60)}
                     </p>
                   </div>
                   <div className="flex items-center mt-4">
@@ -152,7 +155,7 @@ export default function Projects() {
         <Modal onClose={handleCloseModal}>
           <div className="relative w-full h-full flex flex-col xl:flex-row p-4 xl:max-w-6xl xl:mx-auto">
             <div className="relative flex-1 flex items-center justify-center overflow-hidden mb-4 xl:mb-0">
-              {selectedProject.video ? (
+              {viewMode === 'video' && selectedProject.video ? (
                 <div className="relative w-full h-0 pb-[56.25%]">
                   <YouTubeEmbed embedId={selectedProject.video} />
                 </div>
@@ -212,6 +215,21 @@ export default function Projects() {
                   </Link>
                 </div>
               )}
+            </div>
+            {/* Toggle Switch */}
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center  rounded-lg">
+              <button
+                onClick={() => setViewMode('images')}
+                className={`px-4 py-2 rounded-l-lg transition-colors ${viewMode === 'images' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} transition-colors duration-300`}
+              >
+                <IoImage className="text-xl" />
+              </button>
+              <button
+                onClick={() => setViewMode('video')}
+                className={`px-4 py-2 rounded-r-lg transition-colors ${viewMode === 'video' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} transition-colors duration-300`}
+              >
+                <IoVideocam className="text-xl" />
+              </button>
             </div>
           </div>
         </Modal>

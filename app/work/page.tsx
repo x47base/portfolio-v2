@@ -59,7 +59,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 7,
+      id: 6,
       title: "Zypher Executor V1.10 - UI Design",
       description: "Designed and implemented the user interface for Zypher Executor V1.10, a commissioned project. The UI was developed using Xamarin in the .NET framework on Visual Studio 2019 and integrated with a backend written in C#. The project also involved connecting the application with a custom DLL provided by the client to ensure seamless functionality.",
       techStack: [".NET", "C#", "XAMARIN"],
@@ -68,7 +68,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 8,
+      id: 7,
       title: "Crysisroblox - UI Design",
       description: "Created the user interface for Crysisroblox, a custom project commissioned by a client. The UI was built using Xamarin within the .NET framework on Visual Studio 2019 and integrated with a C# backend. The application was connected to a customer-provided DLL to deliver the required features.",
       techStack: [".NET", "C#", "XAMARIN"],
@@ -77,7 +77,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 9,
+      id: 8,
       title: "Discord Bot Template 2022",
       description: "Created a versatile template for Discord bots utilizing slash commands. The template includes essential functions, event handling, and pre-defined options to streamline the development of new Discord bots. This project serves as a foundational tool for quickly setting up and deploying bots with standard features, making it a valuable resource for developers working on Discord integrations.",
       techStack: ["Python", "Discord.py"],
@@ -86,7 +86,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 10,
+      id: 9,
       title: "Roblox Military Game (Version 6)",
       description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
       techStack: ["Lua", "Roblox API"],
@@ -161,13 +161,14 @@ export default function Projects() {
                 className="relative cursor-pointer bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 max-w-xs w-full"
                 onClick={() => handleProjectClick(project)}
               >
-                {project.images.length > 0 ? (<Image
-                  src={project.images[0]}
-                  alt={project.title}
-                  width={350}
-                  height={200}
-                  className="object-cover w-full h-36 rounded-t-lg"
-                />
+                {project.images.length > 0 ? (
+                  <Image
+                    src={project.images[0]}
+                    alt={project.title}
+                    width={350}
+                    height={200}
+                    className="object-cover w-full h-36 rounded-t-lg"
+                  />
                 ) : (
                   <Image
                     src={getYouTubeThumbnail((project.video as string))}
@@ -176,8 +177,7 @@ export default function Projects() {
                     height={200}
                     className="object-cover w-full h-36 rounded-t-lg"
                   />
-                )
-                }
+                )}
                 <div className="p-4 h-40 flex flex-col justify-between">
                   <div>
                     <h3 className="text-lg font-semibold">{truncateText(project.title, 32)}</h3>
@@ -215,12 +215,11 @@ export default function Projects() {
       </div>
 
       {selectedProject && (
-        <div className="relative flex-1 flex flex-col justify-between max-h-full overflow-auto p-4 xl:max-w-6xl xl:mx-auto">
         <Modal onClose={handleCloseModal}>
-          <div className="relative w-full h-full flex flex-col xl:flex-row p-4 xl:max-w-6xl xl:mx-auto">
-            <div className="relative flex-1 flex items-center justify-center overflow-hidden mb-4 xl:mb-0">
+          <div className="relative w-full h-full flex flex-col xl:flex-row overflow-y-auto p-4 xl:max-w-6xl xl:mx-auto">
+            <div className="relative flex-1 flex items-center justify-center mb-4 xl:mb-0">
               {viewMode === 'video' && selectedProject.video ? (
-                <div className="relative w-full h-0 pb-[56.25%]">
+                <div className="relative w-full h-auto">
                   <YouTubeEmbed embedId={selectedProject.video} />
                 </div>
               ) : (
@@ -241,13 +240,13 @@ export default function Projects() {
                       </button>
                     </>
                   )}
-                  <div className="relative w-full h-full flex justify-center">
+                  <div className="relative w-full h-auto flex justify-center">
                     <Image
                       src={selectedProject.images[currentImageIndex]}
                       alt={`${selectedProject.title} Image ${currentImageIndex + 1}`}
                       width={800}
                       height={600}
-                      className="object-contain max-h-full max-w-full rounded-lg"
+                      className="object-contain rounded-lg"
                     />
                   </div>
                 </>
@@ -281,12 +280,11 @@ export default function Projects() {
               )}
             </div>
 
-            {/* Toggle Switch */}
-            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center  rounded-lg">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center rounded-lg">
               <button
                 onClick={() => setViewMode('images')}
-                disabled={!selectedProject.images.length} // Disable if no images
-                className={`relative px-4 py-2 rounded-l-lg transition-colors ${viewMode === 'images' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.images.length ? 'opacity-50 cursor-not-allowed' : ''} transition-colors duration-300`}
+                disabled={!selectedProject.images.length}
+                className={`relative px-4 py-2 rounded-l-lg transition-colors ${viewMode === 'images' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.images.length ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 <IoImage className="text-xl" />
                 {!selectedProject.images.length && (
@@ -295,8 +293,8 @@ export default function Projects() {
               </button>
               <button
                 onClick={() => setViewMode('video')}
-                disabled={!selectedProject.video} // Disable if no video
-                className={`relative px-4 py-2 rounded-r-lg transition-colors ${viewMode === 'video' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.video ? 'opacity-50 cursor-not-allowed' : ''} transition-colors duration-300`}
+                disabled={!selectedProject.video}
+                className={`relative px-4 py-2 rounded-r-lg transition-colors ${viewMode === 'video' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.video ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
                 <IoVideocam className="text-xl" />
                 {!selectedProject.video && (
@@ -306,7 +304,6 @@ export default function Projects() {
             </div>
           </div>
         </Modal>
-        </div>
       )}
     </section>
   );

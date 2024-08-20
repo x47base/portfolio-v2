@@ -19,26 +19,26 @@ export default function Experience() {
         // Programming Languages
         "JavaScript",
         "Python",
-        
+
         // Web Development Frameworks
         "React",
         "Next.js",
         "Express",
-        
+
         // Styling
         "CSS",
         "Tailwind CSS",
-        
+
         // Database
         "MongoDB",
-        
+
         // Cloud Services
         "Amazon Web Services (AWS)",
-        
+
         // Development Tools
         "VS Code",
         "Bash"
-      ]      
+      ]
     },
   ];
 
@@ -63,10 +63,12 @@ export default function Experience() {
             Below is a list of my professional experiences, showcasing my roles, the companies I have worked with, and the technologies I have utilized.
           </p>
           <div className="flex flex-col gap-8">
-            <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-              <span>Download My Resume</span>
-              <MdWorkOutline className="text-xl" />
-            </Button>
+            <Link href="/assets/Lebenslauf-von-Samuel-Spink.pdf" target="_blank" rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                <span>Download My Resume</span>
+                <MdWorkOutline className="text-xl" />
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="grid grid-cols-1 gap-8">

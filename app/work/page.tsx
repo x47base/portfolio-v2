@@ -215,6 +215,7 @@ export default function Projects() {
       </div>
 
       {selectedProject && (
+        <div className="relative flex-1 flex flex-col justify-between max-h-full overflow-auto p-4 xl:max-w-6xl xl:mx-auto">
         <Modal onClose={handleCloseModal}>
           <div className="relative w-full h-full flex flex-col xl:flex-row p-4 xl:max-w-6xl xl:mx-auto">
             <div className="relative flex-1 flex items-center justify-center overflow-hidden mb-4 xl:mb-0">
@@ -305,6 +306,7 @@ export default function Projects() {
             </div>
           </div>
         </Modal>
+        </div>
       )}
     </section>
   );

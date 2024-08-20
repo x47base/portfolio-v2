@@ -15,24 +15,6 @@ export default function Projects() {
   const projects = [
     {
       id: 1,
-      title: "Authentication Backend System",
-      description: "Built a secure authentication backend with session management and JWT-based authorization. The project integrates MongoDB for data storage and uses Swagger for API documentation, providing a reliable and scalable solution for user authentication in web applications.",
-      techStack: ["JavaScript", "Express", "MongoDB", "Swagger-UI"],
-      images: ["/assets/project-authentication-backend-1.png"],
-      link: "https://github.com/x47base/authentication-backend",
-      video: null,
-    },
-    {
-      id: 2,
-      title: "Digital Accessibility Hackathon 2024 - Text-to-Speech Endpoint",
-      description: "Developed a text-to-speech API endpoint during the Digital Accessibility Hackathon 2024 in Zürich. This FastAPI-based service uses pyttsx3 to convert text into audio, enhancing digital accessibility by providing speech outputs for text-based content. The solution supports real-time audio generation and streaming, aimed at improving accessibility for various applications.",
-      techStack: ["Python", "FastAPI", "pyttsx3"],
-      images: ["/assets/project-accessiblity-hack-24-1.png"], // No image available
-      link: "https://github.com/x47base/accessiblity-hack-24",
-      video: null,
-    },
-    {
-      id: 3,
       title: "Projekte Wirtschaft - Probe IPA",
       description: "Collaboratively developed a responsive website centered on Roman economy themes. The project featured a clean, modern design with a responsive header, ensuring seamless user experience across all devices.",
       techStack: ["HTML", "CSS", "JavaScript", "Tailwind CSS"],
@@ -41,13 +23,31 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 4,
+      id: 2,
       title: "Spoofify",
       description: "Developed a music page with features allowing immediate sound playback from a list, track liking, volume control, and real-time track position display. Utilized modern frameworks to enhance functionality and streamline development.",
       techStack: ["React", "JavaScript", "HTML", "CSS", "Tailwind CSS", "Bash"],
       images: ["/assets/project-spoofify-1.png"],
       link: "https://spoofify.spink.dev/",
       video: "CfCZPNMv8r0", // Only the video ID part of the URL
+    },
+    {
+      id: 3,
+      title: "Authentication Backend System",
+      description: "Built a secure authentication backend with session management and JWT-based authorization. The project integrates MongoDB for data storage and uses Swagger for API documentation, providing a reliable and scalable solution for user authentication in web applications.",
+      techStack: ["JavaScript", "Express", "MongoDB", "Swagger-UI"],
+      images: ["/assets/project-authentication-backend-1.png"],
+      link: "https://github.com/x47base/authentication-backend",
+      video: null,
+    },
+    {
+      id: 4,
+      title: "Digital Accessibility Hackathon 2024 - Text-to-Speech Endpoint",
+      description: "Developed a text-to-speech API endpoint during the Digital Accessibility Hackathon 2024 in Zürich. This FastAPI-based service uses pyttsx3 to convert text into audio, enhancing digital accessibility by providing speech outputs for text-based content. The solution supports real-time audio generation and streaming, aimed at improving accessibility for various applications.",
+      techStack: ["Python", "FastAPI", "pyttsx3"],
+      images: ["/assets/project-accessiblity-hack-24-1.png"], // No image available
+      link: "https://github.com/x47base/accessiblity-hack-24",
+      video: null,
     },
     {
       id: 5,

@@ -1,12 +1,15 @@
 "use client";
 import { useEffect, useState } from "react";
 import { MdWorkOutline } from "react-icons/md";
+import { IoCloseCircle } from "react-icons/io5";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function Experience() {
   const [showHeader, setShowHeader] = useState(false);
   const [hideCursor, setHideCursor] = useState(false);
+
+  const isResumeAvailable = false;
 
   const experiences = [
     {
@@ -63,10 +66,13 @@ export default function Experience() {
             Below is a list of my professional experiences, showcasing my roles, the companies I have worked with, and the technologies I have utilized.
           </p>
           <div className="flex flex-col gap-8">
-            <Link href="/assets/Lebenslauf-von-Samuel-Spink.pdf" target="_blank" rel="noopener noreferrer">
-              <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
-                <span>Download My Resume</span>
-                <MdWorkOutline className="text-xl" />
+            <Link href={isResumeAvailable ? "/assets/Lebenslauf-von-Samuel-Spink.pdf" : ""} target={isResumeAvailable ? "_blank" : "_self"} rel="noopener noreferrer">
+              <Button variant="outline" size="lg" className={`uppercase flex items-center gap-2 ${isResumeAvailable ? "" : "text-red-500"}`}>
+                <span className={isResumeAvailable ? "" : "text-red-500"}>{isResumeAvailable ? "Download My Resume" : "Resume Unavailable"}</span>
+                <MdWorkOutline className={`text-xl ${isResumeAvailable ? "" : "text-red-500 border-red-500"}"`} />
+                {!isResumeAvailable && (
+                  <IoCloseCircle className="absolute top-1 right-1 text-red-500" />
+                )}
               </Button>
             </Link>
           </div>

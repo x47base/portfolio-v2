@@ -17,16 +17,18 @@
     "@radix-ui/react-tooltip": "^1.1.2",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.2.12",
+    "framer-motion": "^11.5.4",
     "lucide-react": "^0.400.0",
     "next": "14.2.4",
+    "popmotion": "^11.0.5",
     "puppeteer": "^23.1.0",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.2.1",
     "react-tooltip": "^5.28.0",
     "tailwind-merge": "^2.3.0",
-    "tailwindcss-animate": "^1.0.7"
+    "tailwindcss-animate": "^1.0.7",
+    "tsparticles-engine": "^2.12.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.15",

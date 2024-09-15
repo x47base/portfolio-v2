@@ -29,30 +29,30 @@ const config = {
         ring: "hsl(var(--ring))",
         background: "hsl(var(--background))",
         foreground: "hsl(var(--foreground))",
-        primary: "#1c1c22",
+        primary: "#1f2937", // Dark gray similar to gray-800
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "#111827", // Even darker gray, similar to gray-900
+          foreground: "#e5e7eb", // Light gray similar to gray-200
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",
           foreground: "hsl(var(--destructive-foreground))",
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "#374151", // Muted gray similar to gray-700
+          foreground: "#d1d5db", // Light gray similar to gray-300
         },
         accent: {
-          DEFAULT: "#00ff99",
-          hover: "#00e187",
+          DEFAULT: "#14b8a6", // Teal shade, more muted and cohesive with the dark gray tones
+          hover: "#0d9488",   // Darker teal for hover effect
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "#1f2937", // Dark gray similar to gray-800
+          foreground: "#e5e7eb", // Light gray similar to gray-200
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "#111827", // Dark gray similar to gray-900
+          foreground: "#e5e7eb", // Light gray similar to gray-200
         },
       },
       borderRadius: {

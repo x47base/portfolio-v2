@@ -1,16 +1,26 @@
+// /work/page.tsx
 "use client";
+
 import { useState } from "react";
-import { IoChevronBack, IoChevronForward, IoLink, IoVideocam, IoImage, IoCloseCircle } from "react-icons/io5";
+import {
+  IoChevronBack,
+  IoChevronForward,
+  IoLink,
+  IoVideocam,
+  IoImage,
+  IoCloseCircle,
+} from "react-icons/io5";
 import Image from "next/image";
 import Link from "next/link";
 import Modal from "@/components/Modal";
 import YouTubeEmbed from "@/components/YouTubeEmbed";
-import { Tooltip } from 'react-tooltip';
+import { Tooltip } from "react-tooltip";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<any | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [viewMode, setViewMode] = useState<'images' | 'video'>('images');
+  const [viewMode, setViewMode] = useState<"images" | "video">("images");
 
   const projects = [
     {
@@ -32,7 +42,16 @@ export default function Projects() {
       video: "CfCZPNMv8r0", // Only the video ID part of the URL
     },
     {
-      id: 3,
+      "id": 3,
+      "title": "Discord User Lookup",
+      "description": "Developed a web application that allows users to retrieve and display detailed information about any Discord user by entering their Discord ID. The app features a sleek and intuitive interface, enhanced by real-time animations, and provides visual elements such as user avatars, banners, and accent colors. Built with a modern tech stack, it offers smooth performance and a responsive design, ensuring optimal user experience on both desktop and mobile devices.",
+      "techStack": ["NextJS", "React", "TypeScript", "HTML", "CSS", "Tailwind CSS"],
+      "images": ["/assets/project-discorduserlookup-1.png"],
+      "link": "https://discordlookup.spink.dev/",
+      "video": null
+    },
+    {
+      id: 4,
       title: "Authentication Backend System",
       description: "Built a secure authentication backend with session management and JWT-based authorization. The project integrates MongoDB for data storage and uses Swagger for API documentation, providing a reliable and scalable solution for user authentication in web applications.",
       techStack: ["JavaScript", "Express", "MongoDB", "Swagger-UI"],
@@ -41,7 +60,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 4,
+      id: 5,
       title: "Digital Accessibility Hackathon 2024 - Text-to-Speech Endpoint",
       description: "Developed a text-to-speech API endpoint during the Digital Accessibility Hackathon 2024 in Zürich. This FastAPI-based service uses pyttsx3 to convert text into audio, enhancing digital accessibility by providing speech outputs for text-based content. The solution supports real-time audio generation and streaming, aimed at improving accessibility for various applications.",
       techStack: ["Python", "FastAPI", "pyttsx3"],
@@ -50,7 +69,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 5,
+      id: 6,
       title: "LUAshell",
       description: "LUAshell is a proof-of-concept script that embeds and executes shell commands within Lua code, leveraging Lua 5.4. It automates tasks across environments and includes security measures to mitigate risks. The tool supports various command-based attacks like HTA, PowerShell, and MSBuild, making it valuable for automation and security research.",
       techStack: ["Lua"],
@@ -59,7 +78,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 6,
+      id: 7,
       title: "Zypher Executor V1.10 - UI Design",
       description: "Designed and implemented the user interface for Zypher Executor V1.10, a commissioned project. The UI was developed using Xamarin in the .NET framework on Visual Studio 2019 and integrated with a backend written in C#. The project also involved connecting the application with a custom DLL provided by the client to ensure seamless functionality.",
       techStack: [".NET", "C#", "XAMARIN"],
@@ -68,7 +87,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 7,
+      id: 8,
       title: "Crysisroblox - UI Design",
       description: "Created the user interface for Crysisroblox, a custom project commissioned by a client. The UI was built using Xamarin within the .NET framework on Visual Studio 2019 and integrated with a C# backend. The application was connected to a customer-provided DLL to deliver the required features.",
       techStack: [".NET", "C#", "XAMARIN"],
@@ -77,7 +96,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 8,
+      id: 9,
       title: "Discord Bot Template 2022",
       description: "Created a versatile template for Discord bots utilizing slash commands. The template includes essential functions, event handling, and pre-defined options to streamline the development of new Discord bots. This project serves as a foundational tool for quickly setting up and deploying bots with standard features, making it a valuable resource for developers working on Discord integrations.",
       techStack: ["Python", "Discord.py"],
@@ -86,7 +105,7 @@ export default function Projects() {
       video: null,
     },
     {
-      id: 9,
+      id: 10,
       title: "Roblox Military Game (Version 6)",
       description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
       techStack: ["Lua", "Roblox API"],
@@ -105,9 +124,9 @@ export default function Projects() {
     setCurrentImageIndex(0);
 
     if (project.images.length > 0) {
-      setViewMode('images');
+      setViewMode("images");
     } else if (project.video) {
-      setViewMode('video');
+      setViewMode("video");
     }
   };
 
@@ -120,9 +139,13 @@ export default function Projects() {
 
     const imagesCount = selectedProject.images.length;
     if (direction === "prev") {
-      setCurrentImageIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : imagesCount - 1));
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex > 0 ? prevIndex - 1 : imagesCount - 1
+      );
     } else {
-      setCurrentImageIndex((prevIndex) => (prevIndex < imagesCount - 1 ? prevIndex + 1 : 0));
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex < imagesCount - 1 ? prevIndex + 1 : 0
+      );
     }
   };
 
@@ -156,10 +179,14 @@ export default function Projects() {
           {projects.map((project) => {
             const { visible, hidden } = visibleTechStack(project.techStack, 3);
             return (
-              <div
+              <motion.div
                 key={project.id}
-                className="relative cursor-pointer bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg transition-transform transform hover:scale-105 max-w-xs w-full"
+                className="relative cursor-pointer bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg max-w-xs w-full"
                 onClick={() => handleProjectClick(project)}
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 {project.images.length > 0 ? (
                   <Image
@@ -171,7 +198,7 @@ export default function Projects() {
                   />
                 ) : (
                   <Image
-                    src={getYouTubeThumbnail((project.video as string))}
+                    src={getYouTubeThumbnail(project.video as string)}
                     alt={project.title}
                     width={350}
                     height={200}
@@ -180,7 +207,9 @@ export default function Projects() {
                 )}
                 <div className="p-4 h-40 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold">{truncateText(project.title, 32)}</h3>
+                    <h3 className="text-lg font-semibold">
+                      {truncateText(project.title, 32)}
+                    </h3>
                     <p className="text-sm text-gray-400 mt-1">
                       {truncateText(project.description, 60)}
                     </p>
@@ -208,7 +237,7 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
@@ -216,9 +245,15 @@ export default function Projects() {
 
       {selectedProject && (
         <Modal onClose={handleCloseModal}>
-          <div className="relative w-full h-full flex flex-col xl:flex-row overflow-y-auto p-4 xl:max-w-6xl xl:mx-auto">
+          <motion.div
+            className="relative w-full h-full flex flex-col xl:flex-row overflow-y-auto p-4 xl:max-w-6xl xl:mx-auto"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="relative flex-1 flex items-center justify-center mb-4 xl:mb-0">
-              {viewMode === 'video' && selectedProject.video ? (
+            {viewMode === 'video' && selectedProject.video ? (
                 <div className="relative w-full h-auto">
                   <YouTubeEmbed embedId={selectedProject.video} />
                 </div>
@@ -255,11 +290,16 @@ export default function Projects() {
 
             <div className="flex flex-col justify-between xl:w-1/2 xl:pl-8">
               <div>
-                <h2 className="text-2xl font-semibold mb-2">{selectedProject.title}</h2>
+                <h2 className="text-2xl font-semibold mb-2">
+                  {selectedProject.title}
+                </h2>
                 <p className="mb-4">{selectedProject.description}</p>
                 <div className="flex flex-wrap gap-2 mb-4">
                   {selectedProject.techStack.map((tech: any, index: any) => (
-                    <span key={index} className="bg-gray-700 text-white py-1 px-3 rounded-full text-sm">
+                    <span
+                      key={index}
+                      className="bg-gray-700 text-white py-1 px-3 rounded-full text-sm"
+                    >
                       {tech}
                     </span>
                   ))}
@@ -281,28 +321,54 @@ export default function Projects() {
             </div>
 
             <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex items-center rounded-lg">
-              <button
-                onClick={() => setViewMode('images')}
+              <motion.button
+                onClick={() => setViewMode("images")}
                 disabled={!selectedProject.images.length}
-                className={`relative px-4 py-2 rounded-l-lg transition-colors ${viewMode === 'images' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.images.length ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`relative px-4 py-2 rounded-l-lg transition-colors ${viewMode === "images"
+                    ? "bg-accent text-white"
+                    : "bg-gray-900 text-gray-400"
+                  } ${!selectedProject.images.length ? "opacity-50 cursor-not-allowed" : ""}`}
+                whileHover={
+                  selectedProject.images.length
+                    ? { scale: 1.05 }
+                    : {}
+                }
+                whileTap={
+                  selectedProject.images.length
+                    ? { scale: 0.95 }
+                    : {}
+                }
               >
                 <IoImage className="text-xl" />
                 {!selectedProject.images.length && (
                   <IoCloseCircle className="absolute top-1 right-1 text-red-500" />
                 )}
-              </button>
-              <button
-                onClick={() => setViewMode('video')}
+              </motion.button>
+              <motion.button
+                onClick={() => setViewMode("video")}
                 disabled={!selectedProject.video}
-                className={`relative px-4 py-2 rounded-r-lg transition-colors ${viewMode === 'video' ? 'bg-accent text-white' : 'bg-gray-900 text-gray-400'} ${!selectedProject.video ? 'opacity-50 cursor-not-allowed' : ''}`}
+                className={`relative px-4 py-2 rounded-r-lg transition-colors ${viewMode === "video"
+                    ? "bg-accent text-white"
+                    : "bg-gray-900 text-gray-400"
+                  } ${!selectedProject.video ? "opacity-50 cursor-not-allowed" : ""}`}
+                whileHover={
+                  selectedProject.video
+                    ? { scale: 1.05 }
+                    : {}
+                }
+                whileTap={
+                  selectedProject.video
+                    ? { scale: 0.95 }
+                    : {}
+                }
               >
                 <IoVideocam className="text-xl" />
                 {!selectedProject.video && (
                   <IoCloseCircle className="absolute top-1 right-1 text-red-500" />
                 )}
-              </button>
+              </motion.button>
             </div>
-          </div>
+          </motion.div>
         </Modal>
       )}
     </section>

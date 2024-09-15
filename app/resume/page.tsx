@@ -50,7 +50,7 @@ export default function Experience() {
     <section className="h-full">
       <div className="container mx-auto h-full flex flex-col xl:flex-row items-center justify-center xl:justify-between gap-12 pb-8 xl:gap-24 xl:w-10/12">
         <motion.div
-          className="flex-1 text-center xl:text-left"
+          className="flex-1 text-center items-center xl:text-left"
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
@@ -77,14 +77,33 @@ export default function Experience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <Link href={isResumeAvailable ? "/assets/Lebenslauf-von-Samuel-Spink.pdf" : ""} target={isResumeAvailable ? "_blank" : "_self"} rel="noopener noreferrer">
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                <Button variant="outline" size="lg" className={`uppercase flex items-center gap-2 ${isResumeAvailable ? "" : "text-red-500"}`}>
-                  <span className={isResumeAvailable ? "" : "text-red-500"}>{isResumeAvailable ? "Download My Resume" : "Resume Unavailable"}</span>
-                  <MdWorkOutline className={`text-xl ${isResumeAvailable ? "" : "text-red-500 border-red-500"}"`} />
-                </Button>
-              </motion.div>
-            </Link>
+<Link
+    href={isResumeAvailable ? "/assets/Lebenslauf-von-Samuel-Spink.pdf" : ""}
+    target={isResumeAvailable ? "_blank" : "_self"}
+    rel="noopener noreferrer"
+  >
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
+    >
+      <Button
+        variant="outline"
+        size="lg"
+        className={`uppercase flex items-center justify-center gap-2 mx-auto ${
+          isResumeAvailable ? "" : "text-red-500"
+        }`}
+      >
+        <span className={isResumeAvailable ? "" : "text-red-500"}>
+          {isResumeAvailable ? "Download My Resume" : "Resume Unavailable"}
+        </span>
+        <MdWorkOutline
+          className={`text-xl ${
+            isResumeAvailable ? "" : "text-red-500 border-red-500"
+          }`}
+        />
+      </Button>
+    </motion.div>
+  </Link>
           </motion.div>
         </motion.div>
         <motion.div

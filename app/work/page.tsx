@@ -1,4 +1,3 @@
-// /work/page.tsx
 "use client";
 
 import { useState } from "react";
@@ -170,8 +169,8 @@ export default function Projects() {
     <section className="h-full">
       <div className="container mx-auto h-full flex flex-col items-center justify-center xl:justify-between gap-12 pb-8 xl:w-10/12">
         <div className="flex-1 text-center">
-          <h2 className="text-3xl mb-6 text-accent">My Projects</h2>
-          <p className="max-w-[500px] mb-9 text-muted-foreground">
+          <h2 className="text-3xl mb-6 text-accent dark:text-accent">My Projects</h2>
+          <p className="max-w-[500px] mb-9 text-muted-foreground dark:text-muted-foreground">
             Explore a selection of my projects that highlight my expertise in application development. Click on a project to learn more.
           </p>
         </div>
@@ -181,7 +180,7 @@ export default function Projects() {
             return (
               <motion.div
                 key={project.id}
-                className="relative cursor-pointer bg-gray-800 text-white rounded-lg overflow-hidden shadow-lg max-w-xs w-full"
+                className="relative cursor-pointer bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white rounded-lg overflow-hidden shadow-lg max-w-xs w-full"
                 onClick={() => handleProjectClick(project)}
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -210,7 +209,7 @@ export default function Projects() {
                     <h3 className="text-lg font-semibold">
                       {truncateText(project.title, 32)}
                     </h3>
-                    <p className="text-sm text-gray-400 mt-1">
+                    <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
                       {truncateText(project.description, 60)}
                     </p>
                   </div>
@@ -219,7 +218,7 @@ export default function Projects() {
                       {visible.map((tech, index) => (
                         <span
                           key={index}
-                          className="bg-gray-700 text-white text-center py-1 px-3 rounded-full text-sm"
+                          className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white text-center py-1 px-3 rounded-full text-sm"
                         >
                           {tech}
                         </span>
@@ -228,7 +227,7 @@ export default function Projects() {
                         <span
                           data-tooltip-id={`tooltip-${project.id}`}
                           data-tooltip-content={hidden.join(", ")}
-                          className="bg-gray-700 text-white text-center py-1 px-3 rounded-full text-sm cursor-pointer"
+                          className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white text-center py-1 px-3 rounded-full text-sm cursor-pointer"
                         >
                           +{hidden.length}
                         </span>
@@ -253,7 +252,7 @@ export default function Projects() {
             transition={{ duration: 0.3 }}
           >
             <div className="relative flex-1 flex items-center justify-center mb-4 xl:mb-0">
-            {viewMode === 'video' && selectedProject.video ? (
+              {viewMode === 'video' && selectedProject.video ? (
                 <div className="relative w-full h-auto">
                   <YouTubeEmbed embedId={selectedProject.video} />
                 </div>
@@ -263,13 +262,13 @@ export default function Projects() {
                     <>
                       <button
                         onClick={() => handleNavigate("prev")}
-                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2 shadow-lg hover:bg-gray-700 z-40"
+                        className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-400 dark:hover:bg-gray-700 z-40"
                       >
                         <IoChevronBack className="text-2xl" />
                       </button>
                       <button
                         onClick={() => handleNavigate("next")}
-                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-900 text-white rounded-full p-2 shadow-lg hover:bg-gray-700 z-40"
+                        className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-white rounded-full p-2 shadow-lg hover:bg-gray-400 dark:hover:bg-gray-700 z-40"
                       >
                         <IoChevronForward className="text-2xl" />
                       </button>
@@ -298,7 +297,7 @@ export default function Projects() {
                   {selectedProject.techStack.map((tech: any, index: any) => (
                     <span
                       key={index}
-                      className="bg-gray-700 text-white py-1 px-3 rounded-full text-sm"
+                      className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white py-1 px-3 rounded-full text-sm"
                     >
                       {tech}
                     </span>
@@ -311,7 +310,7 @@ export default function Projects() {
                     href={selectedProject.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center text-blue-500 hover:text-blue-300"
+                    className="flex items-center text-blue-600 dark:text-blue-500 hover:text-blue-400 dark:hover:text-blue-300"
                   >
                     <span className="mr-2 text-sm">View Project</span>
                     <IoLink className="text-lg" />
@@ -325,8 +324,8 @@ export default function Projects() {
                 onClick={() => setViewMode("images")}
                 disabled={!selectedProject.images.length}
                 className={`relative px-4 py-2 rounded-l-lg transition-colors ${viewMode === "images"
-                    ? "bg-accent text-white"
-                    : "bg-gray-900 text-gray-400"
+                  ? "bg-accent text-white"
+                  : "bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-gray-400"
                   } ${!selectedProject.images.length ? "opacity-50 cursor-not-allowed" : ""}`}
                 whileHover={
                   selectedProject.images.length
@@ -348,8 +347,8 @@ export default function Projects() {
                 onClick={() => setViewMode("video")}
                 disabled={!selectedProject.video}
                 className={`relative px-4 py-2 rounded-r-lg transition-colors ${viewMode === "video"
-                    ? "bg-accent text-white"
-                    : "bg-gray-900 text-gray-400"
+                  ? "bg-accent text-white"
+                  : "bg-gray-300 dark:bg-gray-900 text-gray-900 dark:text-gray-400"
                   } ${!selectedProject.video ? "opacity-50 cursor-not-allowed" : ""}`}
                 whileHover={
                   selectedProject.video

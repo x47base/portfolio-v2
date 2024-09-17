@@ -49,7 +49,7 @@ export default function Home() {
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
             <motion.span
-              className="text-xl"
+              className="text-xl text-gray-900 dark:text-white"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.2, duration: 0.8 }}
@@ -63,17 +63,17 @@ export default function Home() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
               >
-                <span className={`${showFirstLine ? "typewriter-line1" : ""} ${hideCursorOne ? "hidden-cursor" : ""}`}>
+                <span className={`${showFirstLine ? "typewriter-line1 text-gray-900 dark:text-white" : ""} ${hideCursorOne ? "hidden-cursor" : ""}`}>
                   Hey! I{"'"}m
                 </span>
                 <br />
-                <span className={`${showSecondLine ? "typewriter-line2 text-accent" : "text-accent hidden-line hidden-cursor"} ${hideCursorTwo ? "hidden-cursor" : ""}`}>
+                <span className={`${showSecondLine ? "typewriter-line2 text-accent dark:text-accent" : "text-accent dark:text-accent hidden-line hidden-cursor"} ${hideCursorTwo ? "hidden-cursor" : ""}`}>
                   Samuel Spink
                 </span>
               </motion.h1>
             </div>
             <motion.p
-              className="max-w-[500px] mb-9 text-white/80"
+              className="max-w-[500px] mb-9 text-gray-900/80 dark:text-white/80"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6, duration: 0.8 }}
@@ -88,7 +88,7 @@ export default function Home() {
             >
               <Link href="/work">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button variant="outline" size="lg" className="uppercase flex items-center gap-2">
+                  <Button variant="outline" size="lg" className="text-accent hover:text-white dark:hover:text-accent-hover ppercase flex items-center gap-2">
                     <span>View My Work</span>
                     <MdWork className="text-xl" />
                   </Button>
@@ -97,7 +97,7 @@ export default function Home() {
               <div className="socials">
                 <Socials
                   containerStyle="flex gap-6"
-                  iconStyle="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent-hover hover:text-primary hover:transition-all duration-500"
+                  iconStyle="flex justify-center items-center w-9 h-9 border border-accent dark:border-accent rounded-full flex justify-center items-center text-accent dark:text-accent text-base"
                 />
               </div>
             </motion.div>

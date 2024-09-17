@@ -56,7 +56,7 @@ export default function Experience() {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h2
-            className={`text-3xl mb-6 ${showHeader ? "typewriter-line text-accent" : ""} ${hideCursor ? "hidden-cursor" : ""}`}
+            className={`text-3xl mb-6 text- ${showHeader ? "typewriter-line text-accent dark:text-accent" : ""} ${hideCursor ? "hidden-cursor" : ""}`}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
@@ -64,7 +64,7 @@ export default function Experience() {
             My Experience
           </motion.h2>
           <motion.p
-            className="max-w-[500px] mb-9 text-white/80"
+            className="max-w-[500px] mb-9 text-gray-900/80 dark:text-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -77,33 +77,30 @@ export default function Experience() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-<Link
-    href={isResumeAvailable ? "/assets/Lebenslauf-von-Samuel-Spink.pdf" : ""}
-    target={isResumeAvailable ? "_blank" : "_self"}
-    rel="noopener noreferrer"
-  >
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
-    >
-      <Button
-        variant="outline"
-        size="lg"
-        className={`uppercase flex items-center justify-center gap-2 mx-auto ${
-          isResumeAvailable ? "" : "text-red-500"
-        }`}
-      >
-        <span className={isResumeAvailable ? "" : "text-red-500"}>
-          {isResumeAvailable ? "Download My Resume" : "Resume Unavailable"}
-        </span>
-        <MdWorkOutline
-          className={`text-xl ${
-            isResumeAvailable ? "" : "text-red-500 border-red-500"
-          }`}
-        />
-      </Button>
-    </motion.div>
-  </Link>
+            <Link
+              href={isResumeAvailable ? "/assets/Lebenslauf-von-Samuel-Spink.pdf" : ""}
+              target={isResumeAvailable ? "_blank" : "_self"}
+              rel="noopener noreferrer"
+            >
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className={`uppercase flex items-center justify-center gap-2 mx-auto ${isResumeAvailable ? "" : "text-red-500 dark:text-red-500 hover:text-white dark:hover:text-gray-900"
+                    }`}
+                >
+                  <span >
+                    {isResumeAvailable ? "Download My Resume" : "Resume Unavailable"}
+                  </span>
+                  <MdWorkOutline
+                    className={`text-xl`}
+                  />
+                </Button>
+              </motion.div>
+            </Link>
           </motion.div>
         </motion.div>
         <motion.div
@@ -115,28 +112,28 @@ export default function Experience() {
           {experiences.map((exp, index) => (
             <motion.div
               key={index}
-              className="flex flex-col xl:flex-row justify-between bg-gray-800 p-6 rounded-lg shadow-lg"
+              className="flex flex-col xl:flex-row justify-between bg-gray-100 dark:bg-gray-800 p-6 rounded-lg shadow-lg"
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.9 + index * 0.1, duration: 0.8 }}
             >
-              <div className="text-gray-500 xl:w-1/4 text-left mb-4 xl:mb-0">
+              <div className="text-gray-500 dark:text-gray-400 xl:w-1/4 text-left mb-4 xl:mb-0">
                 <span>{exp.period}</span>
               </div>
               <div className="xl:w-3/4">
                 <Link href={exp.companyUrl}>
                   <motion.span
-                    className="text-xl font-semibold text-accent hover:underline"
+                    className="text-xl font-semibold text-accent dark:text-accent hover:underline"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
                     {exp.role} - {exp.company}
                   </motion.span>
                 </Link>
-                <p className="mt-2 mb-4 text-white/80">{exp.description}</p>
+                <p className="mt-2 mb-4 text-gray-900/80 dark:text-white/80">{exp.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {exp.technologies.map((tech, idx) => (
-                    <span key={idx} className="bg-gray-700 text-white py-1 px-3 rounded-full text-sm">
+                    <span key={idx} className="bg-gray-300 dark:bg-gray-700 text-gray-900 dark:text-white py-1 px-3 rounded-full text-sm">
                       {tech}
                     </span>
                   ))}

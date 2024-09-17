@@ -30,22 +30,23 @@ const Contact = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
           <motion.h2
-            className="text-3xl mb-6"
+            className="text-3xl mb-6 text-accent dark:text-accent"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className={`${showLine ? "typewriter-line text-accent" : ""} ${hideCursor ? "hidden-cursor" : ""}`}>
+            <span className={`${showLine ? "typewriter-line text-accent dark:text-accent" : ""} ${hideCursor ? "hidden-cursor" : ""}`}>
               Get in Touch
             </span>
           </motion.h2>
           <motion.p
-            className="max-w-[500px] mb-9 text-white/80"
+            className="max-w-[500px] mb-9 text-gray-900/80 dark:text-white/80"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
           >
-            I{"'"}m always open to discuss your project or ideas. Feel free to reach out to me via email.
+            I{"'"}m always open to discussing potential projects, collaborations, or any professional opportunities you may have.
+            If you{"'"}re looking to hire or want to explore how we can work together, feel free to reach out via email.
           </motion.p>
           <motion.div
             className="flex justify-center items-center xl:items-start xl:justify-start flex-col gap-6"
@@ -58,8 +59,8 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <MdEmail className="text-xl text-accent" />
-              <a href="mailto:samuelspink.ch@gmail.com" className="text-white/80">
+              <MdEmail className="text-xl text-accent dark:text-accent" />
+              <a href="mailto:samuelspink.ch@gmail.com" className="text-gray-900/80 dark:text-white/80">
                 samuelspink.ch@gmail.com
               </a>
             </motion.div>
@@ -70,8 +71,8 @@ const Contact = () => {
               whileHover={{ scale: 1.05 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <MdPhone className="text-xl text-accent" />
-              <a href="tel:+41000000000" className="text-white/80">
+              <MdPhone className="text-xl text-accent dark:text-accent" />
+              <a href="tel:+41000000000" className="text-gray-900/80 dark:text-white/80">
                 +41 00 000 00 00
               </a>
             </motion.div>
@@ -84,7 +85,7 @@ const Contact = () => {
             >
               <Socials
                 containerStyle="flex gap-6"
-                iconStyle="w-9 h-9 border border-accent rounded-full flex justify-center items-center text-accent text-base hover:bg-accent-hover hover:text-primary hover:transition-all duration-500"
+                iconStyle="flex justify-center items-center w-9 h-9 border border-accent dark:border-accent rounded-full flex justify-center items-center text-accent dark:text-accent text-base"
               />
             </motion.div>
           </motion.div>

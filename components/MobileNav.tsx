@@ -30,14 +30,14 @@ const MobileNav = () => {
     return (
         <Sheet>
             <SheetTrigger className="flex justify-center items-center">
-                <CiMenuFries className="text-[32px] text-accent" />
+                <CiMenuFries className="text-[32px] text-accent dark:text-accent" />
             </SheetTrigger>
-            <SheetContent className="flex flex-col">
+            <SheetContent className="flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
                 <div className="mt-32 mb-40 text-center text-2xl">
                     <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
                         <Link href="/">
-                            <h1 className="text-4xl font-semibold">
-                                Samuel <span className="text-accent">.</span>
+                            <h1 className="text-4xl font-semibold text-gray-900 dark:text-white">
+                                Samuel <span className="text-accent dark:text-accent">.</span>
                             </h1>
                         </Link>
                     </motion.div>
@@ -48,7 +48,7 @@ const MobileNav = () => {
                             <motion.div key={index} whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
                                 <Link
                                     href={link.path}
-                                    className={`${link.path === pathname && "text-accent border-b-2 border-accent"} text-xl capitalize hover:text-accent transition-all`}
+                                    className={`${link.path === pathname && "text-accent dark:text-accent border-b-2 border-accent dark:border-accent"} text-xl capitalize hover:text-accent dark:hover:text-accent transition-all`}
                                 >
                                     {link.name}
                                 </Link>

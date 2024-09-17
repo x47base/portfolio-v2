@@ -35,8 +35,8 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#000000" />
         <meta name="msapplication-config" content="/browserconfig.xml" />
       </head>
-      <body className={`${jetbrainsmono.variable} min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black`}>
-        <Loader />  
+      <body className={`${jetbrainsmono.variable} min-h-screen bg-gradient-to-b from-gray-200 via-cool-gray-100 to-white dark:from-gray-900 dark:via-gray-800 dark:to-black text-foreground text-white leading-loose`}>
+        <Loader />
         <Header />
         {children}
       </body>

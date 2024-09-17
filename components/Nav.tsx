@@ -32,7 +32,7 @@ function Nav() {
                     <motion.div key={index} whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
                         <Link
                             href={link.path}
-                            className={`${link.path === pathname && "text-accent border-b-2 border-accent"} capitalize font-medium hover:text-accent transition-all`}
+                            className={`${link.path === pathname && "text-accent dark:text-accent border-b-2 border-accent dark:border-accent"} capitalize font-medium hover:text-accent dark:hover:text-accent transition-all`}
                         >
                             {link.name}
                         </Link>

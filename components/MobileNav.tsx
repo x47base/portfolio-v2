@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { CiMenuFries } from "react-icons/ci";
 import { motion } from "framer-motion";
+import DarkLightModeSwitch from "./DarkLightModeSwitch";
 
 const links = [
     {
@@ -55,6 +56,9 @@ const MobileNav = () => {
                             </motion.div>
                         );
                     })}
+                    <div className="flex items-center">
+                        <DarkLightModeSwitch />
+                    </div>
                 </nav>
             </SheetContent>
         </Sheet>

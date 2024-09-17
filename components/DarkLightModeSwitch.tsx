@@ -21,7 +21,7 @@ const DarkLightModeSwitch = () => {
     return (
         <motion.button
             onClick={() => setDarkMode(!isDarkMode)}
-            className="flex justify-center items-center p-2 rounded-full transition-all duration-200"
+            className="flex justify-center items-center rounded-full transition-all duration-200"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ type: "spring", stiffness: 300 }}

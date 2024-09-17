@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import DarkLightModeSwitch from "./DarkLightModeSwitch";
 
 const links = [
     {
@@ -26,7 +27,7 @@ const links = [
 function Nav() {
     const pathname = usePathname();
     return (
-        <nav className="flex gap-8">
+        <nav className="flex gap-8 items-center justify-center">
             {links.map((link, index) => {
                 return (
                     <motion.div key={index} whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
@@ -39,6 +40,9 @@ function Nav() {
                     </motion.div>
                 );
             })}
+            <div className="flex items-center">
+                <DarkLightModeSwitch />
+            </div>
         </nav>
     );
 }

@@ -20,16 +20,8 @@ function Header() {
           </Link>
         </motion.div>
         {/* desktop nav & hire me button */}
-        <div className="hidden xl:flex gap-8 items-center justify-center">
+        <div className="hidden xl:flex items-center justify-center">
           <Nav />
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }} transition={{ type: "spring", stiffness: 150 }}>
-            <Link href="/contact">
-              <Button className="text-gray-900 bg-accent dark:bg-accent dark:text-white hover:bg-accent hover:text-gray-900 dark:hover:bg-accent dark:hover:text-white">
-                Hire Me
-              </Button>
-            </Link>
-          </motion.div>
-          <DarkLightModeSwitch />
         </div>
 
         {/* mobile nav */}

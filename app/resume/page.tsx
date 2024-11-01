@@ -15,6 +15,14 @@ export default function Experience() {
 
   const experiences = [
     {
+      period: "Sept 2025",
+      role: "Application Developer Intern",
+      company: "Lufthansa Systems FlightNav",
+      companyUrl: "https://www.lhsystems.com/company/our-subsidiaries/lufthansa-systems-flightnav",
+      description: "In September 2025, I'll be joining Lufthansa Systems FlightNav as an Application Developer Intern! I’m really looking forward to diving deeper into application development and bringing what I learned at Kantonsschule Hottingen and Bildungszentrum Zürichsee to real-world projects. It's exciting to have the chance to work on aviation technology and continue growing my technical skills.",
+      technologies: []
+    },
+    {
       period: "2022 - PRESENT",
       role: "Student",
       company: "Kantonsschule Hottingen",

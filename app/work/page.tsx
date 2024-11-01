@@ -103,15 +103,6 @@ export default function Projects() {
       link: "https://github.com/x47base/Discord-Template-Slash-Commands-Bot",
       video: null,
     },
-    {
-      id: 10,
-      title: "Roblox Military Game (Version 6)",
-      description: "As the Lead Scripter for the upcoming Version 6 of the British Army Roblox military group, I am responsible for developing and implementing all the code, including comprehensive frontend integrations and backend systems. This version will introduce an advanced team changer, an overhead GUI system, and several other enhancements aimed at elevating gameplay and realism. The project represents a significant upgrade, showcasing cutting-edge scripting and design to deliver an immersive military role-playing experience on Roblox.",
-      techStack: ["Lua", "Roblox API"],
-      images: [],
-      link: "https://www.roblox.com/games/7327497219/British-Army",
-      video: "QNKJ8kuQ-r8", // Only the video ID part of the URL
-    },
   ];
 
   const getYouTubeThumbnail = (videoId: string) => {

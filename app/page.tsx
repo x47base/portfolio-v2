@@ -88,7 +88,7 @@ export default function Home() {
             >
               <Link href="/work">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button variant="outline" size="lg" className="text-accent hover:text-white dark:hover:text-accent-hover ppercase flex items-center gap-2">
+                  <Button variant="outline" size="lg" className="text-accent hover:text-white dark:hover:text-accent-hover ppercase flex items-center gap-2 buttonClass">
                     <span>View My Work</span>
                     <MdWork className="text-xl" />
                   </Button>

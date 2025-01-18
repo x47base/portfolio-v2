@@ -30,7 +30,7 @@ function Nav() {
         <nav className="flex gap-8 items-center justify-center">
             {links.map((link, index) => {
                 return (
-                    <motion.div key={index} whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
+                    <motion.div key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link
                             href={link.path}
                             className={`${link.path === pathname && "text-accent dark:text-accent border-b-2 border-accent dark:border-accent"} capitalize font-medium hover:text-accent dark:hover:text-accent transition-all`}

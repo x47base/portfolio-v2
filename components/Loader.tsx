@@ -23,7 +23,7 @@ const Loader = () => {
                     <div className="w-3 h-3 bg-accent dark:bg-accent rounded-full animate-loading delay-150"></div>
                     <div className="w-3 h-3 bg-accent dark:bg-accent rounded-full animate-loading delay-300"></div>
                 </div>
-                <div className="text-accent dark:text-accent mt-2 font-bold">LOADING...</div>
+                <div className="text-accent dark:text-accent mt-2 font-satoshi font-700">LOADING</div>
             </div>
         </div>
     );

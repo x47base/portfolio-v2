@@ -57,7 +57,7 @@ const Contact = () => {
             <motion.div
               className="flex items-center gap-4"
               whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 300 }}
+              whileTap={{ scale: 0.95 }}
             >
               <MdEmail className="text-xl text-accent dark:text-accent" />
               <a href="mailto:samuelspink.ch@gmail.com" className="text-gray-900/80 dark:text-white/80">

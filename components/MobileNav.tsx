@@ -35,9 +35,9 @@ const MobileNav = () => {
             </SheetTrigger>
             <SheetContent className="flex flex-col bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
                 <div className="mt-32 mb-40 text-center text-2xl">
-                    <motion.div whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
+                    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                         <Link href="/">
-                            <h1 className="text-4xl font-semibold text-gray-900 dark:text-white">
+                            <h1 className="text-4xl font-satoshi font-700 text-gray-900 dark:text-white">
                                 Samuel <span className="text-accent dark:text-accent">.</span>
                             </h1>
                         </Link>
@@ -46,10 +46,10 @@ const MobileNav = () => {
                 <nav className="flex flex-col justify-center items-center gap-8">
                     {links.map((link, index) => {
                         return (
-                            <motion.div key={index} whileHover={{ scale: 1.1 }} transition={{ type: "spring", stiffness: 300 }}>
+                            <motion.div key={index} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                                 <Link
                                     href={link.path}
-                                    className={`${link.path === pathname && "text-accent dark:text-accent border-b-2 border-accent dark:border-accent"} text-xl capitalize hover:text-accent dark:hover:text-accent transition-all`}
+                                    className={`${link.path === pathname && "text-accent dark:text-accent border-b-2 border-accent dark:border-accent"} text-xl capitalize hover:text-accent dark:hover:text-accent transition-all font-satoshi font-700`}
                                 >
                                     {link.name}
                                 </Link>

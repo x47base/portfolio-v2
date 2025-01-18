@@ -197,7 +197,7 @@ export default function Projects() {
                 )}
                 <div className="p-4 h-40 flex flex-col justify-between">
                   <div>
-                    <h3 className="text-lg font-semibold">
+                    <h3 className="text-lg font-satoshi font-700">
                       {truncateText(project.title, 32)}
                     </h3>
                     <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">
@@ -280,7 +280,7 @@ export default function Projects() {
 
             <div className="flex flex-col justify-between xl:w-1/2 xl:pl-8">
               <div>
-                <h2 className="text-2xl font-semibold mb-2">
+                <h2 className="text-2xl font-satoshi font-700 mb-2">
                   {selectedProject.title}
                 </h2>
                 <p className="mb-4">{selectedProject.description}</p>

@@ -65,19 +65,36 @@
   }
 }
 
-
 @layer base {
   .h1 {
-    @apply text-5xl xl:text-7xl leading-[1.1] font-semibold;
+    @apply text-5xl xl:text-7xl leading-[1.1] font-satoshi;
   }
 
   .h2 {
-    @apply text-4xl xl:text-5xl leading-[1.1] font-semibold;
+    @apply text-4xl xl:text-5xl leading-[1.1] font-satoshi;
   }
 
   .h3 {
-    @apply text-xl xl:text-2xl leading-[1.1] font-semibold;
+    @apply text-xl xl:text-2xl leading-[1.1] font-satoshi;
   }
+}
+
+* {
+  font-family:Satoshi,system-ui,-apple-system,Segoe UI,Roboto,Helvetica Neue,Noto Sans,Liberation Sans,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  font-style: normal;
+  font-weight: 500;
+}
+
+h1{
+  font-weight: 600;
+}
+
+h2,h3 {
+  font-weight: 500;
+}
+
+button span {
+  font-weight: 600;
 }
 
 @keyframes typewriter {

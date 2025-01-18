@@ -22,9 +22,6 @@ const DarkLightModeSwitch = () => {
         <motion.button
             onClick={() => setDarkMode(!isDarkMode)}
             className="flex justify-center items-center rounded-full transition-all duration-200"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            transition={{ type: "spring", stiffness: 300 }}
         >
             {isDarkMode ? <MdLightMode size={24} className="text-sun" /> : <MdDarkMode size={24} className="text-night" />}
         </motion.button>

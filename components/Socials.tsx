@@ -22,7 +22,6 @@ const Socials: React.FC<SocialsProps> = ({ containerStyle, iconStyle }) => {
           key={index}
           whileHover={{ scale: 1.2 }}
           whileTap={{ scale: 0.95 }}
-          transition={{ type: "spring", stiffness: 300 }}
         >
           <Link
             href={social.path}

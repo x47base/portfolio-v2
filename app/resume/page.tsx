@@ -131,7 +131,7 @@ export default function Experience() {
               <div className="xl:w-3/4">
                 <Link href={exp.companyUrl}>
                   <motion.span
-                    className="text-xl font-semibold text-accent dark:text-accent hover:underline"
+                    className="text-xl font-satoshi font-700 text-accent dark:text-accent hover:underline"
                     whileHover={{ scale: 1.05 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
